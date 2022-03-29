@@ -1,0 +1,29 @@
+﻿<Window x:Class="HomeWorkBookStore.TransactionOrder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HomeWorkBookStore"
+        mc:Ignorable="d"
+        Title="TransactionOrder" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="dgTransactions" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="50,101,50,41" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn HeaderStringFormat="Tran_ID" Header="Tran_ID" Width="116" Binding="{Binding TranID}"/>
+                <DataGridTextColumn HeaderStringFormat="Customer_Name" Header="Customer_Name" Width="116" Binding="{Binding CustomerName}"/>
+                <DataGridTextColumn x:Name="dataGridTextColumn" Header="ISBN" Binding="{Binding Isbn}" Width="116"/>
+                <DataGridTextColumn HeaderStringFormat="Title" Header="Title" Width="116" Binding="{Binding Title}"/>
+                <DataGridTextColumn HeaderStringFormat="Quatity" Header="Quatity" Width="116" Binding="{Binding Quatity}"/>
+                <DataGridTextColumn HeaderStringFormat="Total_Price" Header="Total_Price" Width="116" Binding="{Binding TotalPrice}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="500,45,0,0" VerticalAlignment="Top" Height="20" Width="57" Click="btnSearch_Click"/>
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Margin="354,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cbxSearch" HorizontalAlignment="Left" Margin="246,45,0,0" VerticalAlignment="Top" Width="78" SelectedIndex="0">
+            <ComboBoxItem Content="ทั้งหมด"/>
+            <ComboBoxItem Content="TransactionsID "/>
+            <ComboBoxItem Content="CustomerName"/>
+            <ComboBoxItem Content="ISBN"/>
+        </ComboBox>
+    </Grid>
+</Window>

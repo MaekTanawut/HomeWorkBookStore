@@ -1,0 +1,46 @@
+﻿<Window x:Class="HomeWorkBookStore.ManageCustomer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HomeWorkBookStore"
+        mc:Ignorable="d"
+        Title="ManageCustomer" Height="450" Width="800">
+    <Grid>
+        <ComboBox x:Name="cbxSearch" HorizontalAlignment="Left" Margin="56,38,0,0" VerticalAlignment="Top" Width="78" SelectedIndex="0">
+            <ComboBoxItem Content="ทั้งหมด"/>
+            <ComboBoxItem Content="IDCustomer"/>
+            <ComboBoxItem Content="Name"/>
+        </ComboBox>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="299,40,0,0" VerticalAlignment="Top" Height="20" Width="57" Click="btnSearch_Click"/>
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Margin="154,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <GroupBox x:Name="gbBookDetail" HorizontalAlignment="Left" Height="302" Header="CustomerDetail" Margin="442,38,0,0" VerticalAlignment="Top" Width="307">
+            <Grid>
+                <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="128,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBlock HorizontalAlignment="Left" Margin="32,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="ID Customer  :"/>
+                <TextBlock HorizontalAlignment="Left" Margin="32,87,0,0" TextWrapping="Wrap" Text="Name  :" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="32,132,0,0" TextWrapping="Wrap" Text="Address :" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="32,180,0,0" TextWrapping="Wrap" Text="Email :" VerticalAlignment="Top"/>
+                <Button x:Name="btnSubmit" Content="ยืนยัน" HorizontalAlignment="Left" Margin="59,237,0,0" VerticalAlignment="Top" Height="22" Width="54" Visibility="Visible" Click="btnSubmit_Click"/>
+                <Button x:Name="btnCancel" Content="ยกเลิก" HorizontalAlignment="Left" Margin="188,237,0,0" VerticalAlignment="Top" Visibility="Visible" Width="54" Height="22" Click="btnCancel_Click"/>
+            </Grid>
+        </GroupBox>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="576,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtAddress" HorizontalAlignment="Left" Margin="576,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Margin="576,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnAdd" Content="เพิ่มลูกค้า" HorizontalAlignment="Left" Margin="469,357,0,0" VerticalAlignment="Top" Width="62" Click="btnAdd_Click"/>
+        <Button x:Name="btnDelete" Content="ลบลูกค้า" HorizontalAlignment="Left" Margin="685,357,0,0" VerticalAlignment="Top" Click="btnDelete_Click"/>
+        <Button x:Name="btnEdit" Content="แก้ไขรายรายละเอียด" HorizontalAlignment="Left" Margin="558,357,0,0" VerticalAlignment="Top" Width="102" Click="btnEdit_Click"/>
+        <Grid HorizontalAlignment="Left" Height="319" Margin="44,78,0,0" VerticalAlignment="Top" Width="356">
+            <DataGrid x:Name="dgCustomer" SelectionChanged="dgCustomer_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn HeaderStringFormat="IDCustomer" Header="IDCustomer" Binding="{Binding IdCustomer}" Width="88" CanUserResize="False"/>
+                    <DataGridTextColumn HeaderStringFormat="Name" Header="Name" Binding="{Binding CustomerNaeme}" CanUserResize="False" Width="88"/>
+                    <DataGridTextColumn HeaderStringFormat="Address" Header="Address" Binding="{Binding Address}" CanUserResize="False" Width="88"/>
+                    <DataGridTextColumn HeaderStringFormat="Email" Header="Email" Binding="{Binding Email}" CanUserResize="False" Width="87"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+
+    </Grid>
+</Window>
